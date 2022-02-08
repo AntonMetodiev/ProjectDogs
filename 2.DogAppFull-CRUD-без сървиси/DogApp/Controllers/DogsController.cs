@@ -6,16 +6,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using DogApp.Models;
 using DogApp.Domain;
+using DogApp.Abstractions;
 
 namespace DogApp.Controllers
 {
     public class DogsController : Controller
     {
-        private readonly ApplicationDbContext context;
+        private readonly IDogService _dogService;
 
-        public DogsController(ApplicationDbContext context)
+        public DogsController(IDogService dogsService)
         {
-            this.context = context;
+            this._dogService = dogsService;
         }
 
         public IActionResult Create()
