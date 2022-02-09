@@ -13,5 +13,6 @@ namespace DogApp.Abstractions
         List<Dog> GetDogs();
         Dog GetDogById(int dogId);
         bool RemoveById(int dogId);
+        List<Dog> GetDogs(string searchStringBreed, string searchStringName);
     }
 }
